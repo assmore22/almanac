@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Almanac - A public record that checks itself</title>
+<meta name="description" content="A consensus-verified fact registry on GenLayer. Anyone submits a statement with a cited source; a validator set reads the source and agrees whether it holds. Verified facts join the canon; any entry can be re-checked as the world changes." />
+<link rel="stylesheet" href="./styles.css?v=6">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="logo-mark"><i class="ph-bold ph-book-bookmark"></i></span> Almanac</a>
+    <div class="nav-mid">
+      <a href="#how">How it works</a>
+      <a href="#facts">The record</a>
+      <a href="#why">Why Almanac</a>
+    </div>
+    <div class="nav-end">
+      <span id="walletslot"><button class="btn ghost sm" id="connectBtn">Connect</button></span>
+      <button class="btn primary sm" id="navPostBtn">Submit a fact</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="graphCanvas"></canvas>
+  <div class="hero-inner">
+    <span class="eyebrow">Consensus-verified fact registry · GenLayer</span>
+    <h1>A public record<br>that checks itself.</h1>
+    <p class="lede">Anyone can add a statement to the Almanac, backed by a public source. The contract reads that source and a validator set agrees whether it truly holds. Supported statements join the canon; unsupported ones are marked disputed. And because the world changes, any entry can be re-checked at any time - the record stays honest, on-chain, forever.</p>
+    <div class="hero-cta">
+      <button class="btn primary lg" id="heroPostBtn">Submit a fact</button>
+      <a class="btn line lg" href="#facts">Read the record</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="strip">
+    <div class="strip-cell"><b id="stTotal">0</b><span>Entries</span></div>
+    <div class="strip-cell"><b id="stVerified">0</b><span>Verified</span></div>
+    <div class="strip-cell"><b id="stDisputed">0</b><span>Disputed</span></div>
+    <div class="strip-cell"><button class="btn line sm" id="refreshBtn"><i class="ph-bold ph-arrows-clockwise"></i> Sync</button></div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="sec-head"><span class="eyebrow">How it works</span><h2>From claim to canon.</h2></div>
+    <div class="grid-3">
+      <div class="cell"><span class="cn">01</span><h3>Submit</h3><p>Add a statement and cite a public source where its truth can be read. It enters the record as pending.</p></div>
+      <div class="cell"><span class="cn">02</span><h3>Verify</h3><p>The contract reads the source and a validator set agrees whether it supports the statement. Supported joins the canon; unsupported is disputed.</p></div>
+      <div class="cell"><span class="cn">03</span><h3>Re-check</h3><p>Sources change. Anyone can re-run the check on any entry, so the record reflects what's true now, not just when it was added.</p></div>
+    </div>
+  </section>
+
+  <section class="facts" id="facts">
+    <div class="sec-row"><h2>The record</h2><span class="mono count" id="fCount">-</span></div>
+    <div class="composer">
+      <span class="comp-q">"</span>
+      <input id="nStmt" class="comp-stmt" placeholder="State a fact for the record…" autocomplete="off" />
+      <input id="nUrl" class="comp-url" placeholder="https://source-that-proves-it" autocomplete="off" />
+      <button class="btn primary" id="createBtn"><i class="ph-bold ph-plus"></i> Add to the record</button>
+    </div>
+    <div class="fact-grid" id="factList"><div class="f-empty">Reading the chain…</div></div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="sec-head"><span class="eyebrow">Why Almanac</span><h2>Facts with their receipts.</h2></div>
+    <div class="grid-3">
+      <div class="cell"><i class="ph-bold ph-link-simple"></i><h3>Every fact is sourced</h3><p>No claim stands alone. Each entry points to a public source anyone can open and re-check for themselves.</p></div>
+      <div class="cell"><i class="ph-bold ph-arrows-clockwise"></i><h3>Stays honest over time</h3><p>A fact verified last year can be re-checked today. Entries don't rot - they get re-judged against the live source.</p></div>
+      <div class="cell"><i class="ph-bold ph-stack"></i><h3>Permanent and open</h3><p>The whole record lives on-chain. Anyone can read it, add to it, or audit how any entry earned its status.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-card">
+      <h2>Know something true? Put it on the record.</h2>
+      <p>State it, cite it, and let the validator set confirm it. One transaction on GenLayer Bradbury.</p>
+      <button class="btn primary lg" id="ctaPostBtn">Submit a fact</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="#top"><span class="logo-mark"><i class="ph-bold ph-book-bookmark"></i></span> Almanac</a>
+    <div class="foot-links">
+      <a href="#how">How it works</a><a href="#facts">The record</a><a href="#why">Why Almanac</a>
+      <a href="https://docs.genlayer.com/" target="_blank" rel="noopener">GenLayer docs ↗</a>
+      <a id="contractLink" href="https://explorer-bradbury.genlayer.com/address/0xe113fF6B307F8EbB1977Ba51747CE73CD6fF9dA8" target="_blank" rel="noopener">Contract 0xe113...9dA8 -></a>
+    </div>
+    <span class="foot-net"><span class="net-dot"></span>Bradbury · live</span>
+  </div>
+  <div class="foot-base">Almanac · a consensus-verified fact registry on GenLayer Bradbury</div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-h"><h3 id="drawerTitle">Submit a fact</h3><button class="icon-btn" id="closeDrawer" aria-label="Close"><i class="ph-bold ph-x"></i></button></div>
+  <div class="drawer-b" id="drawerBody"></div>
+</aside>
+<div id="log"></div>
+<script type="module" src="./app.js?v=1"></script>
+</body>
+</html>
