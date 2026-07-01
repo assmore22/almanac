@@ -1,0 +1,29 @@
+{
+  "project": "17-almanac",
+  "name": "AlmanacForecast",
+  "network": "studionet",
+  "chainId": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "explorer": "https://explorer-studio.genlayer.com",
+  "contractAddress": "0xd28b9261B0E939035996519B594d09744051681e",
+  "deployTxHash": "0xdd93b5a888381059da4fc12e0aef17de3202f9d4fd5c64f5a301a57e64f15396",
+  "contractExplorer": "https://explorer-studio.genlayer.com/contracts/0xd28b9261B0E939035996519B594d09744051681e",
+  "deployer": "0x7873248C639Cc039d3a15e08803b598814031b2D",
+  "deployedAt": "2026-06-22T22:03:37.847Z",
+  "statusName": 7,
+  "smoke": {
+    "create_forecast": "0xccceaea97fc469b5a2771eb82dfff8486f1b1c7912afc6261110335ba7665cdf",
+    "add_signal": "0x336b40e347ee090b4821847393a0896c8d8872de358480a90c69c09924bdd5d1",
+    "add_update": "0x82e4cc9c74f13ff842b60d43c5005d50352ed8b9c4e3152fdd60a9b5097d994a",
+    "open_review": "0xcb09e4d209e07c9c6c3ad6ff0e6a63d2aed98d0dc1a564974af9e249befa223b",
+    "verify_with_genlayer": "0xb32a98dc1b97689aeb3fb07763c62735cfe87c1f7a58056eab9dda16232027f0",
+    "open_challenge_window": "0x23c8203d66bbe24830594fda5a0dca60d0e06b80ead132bbebd1fd1ce6a1adce",
+    "submit_challenge": "0x5aa37754dd16a73d5cfd8a02ca004230a9f5aa0ff6f7dbd2e7177ae32a23ec3e",
+    "resolve_challenge": "0x69bf8b88f4797b1acceb870d83fa58e9eaa96c20e6075696fec9b1609e669bd1",
+    "finalize_forecast": "0x3d27e759d08271398ef63b2b8c78155594b98937dd73950f86f76ee82911af73",
+    "archive_forecast": "0x34e268b476d593ce946fac8971f659f7cb185bdcee7f4bd86226e3f3feeed1c5",
+    "recalculate_reputation": "0x8a80471dee497c1a747e9d3097d8fb44270c028ccb6db9e4b07badc1b9c8c20b",
+    "forecastId": "0",
+    "challengeId": "0"
+  }
+}
