@@ -14,7 +14,8 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink2);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3{color:var(--ink);font-family:var(--serif);letter-spacing:-.01em;line-height:1.1;text-wrap:balance}
-a{color:var(--teal)}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:none}
 .mono{font-family:var(--fm);font-variant-numeric:tabular-nums}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);margin-bottom:14px;font-family:var(--sans)}
 
