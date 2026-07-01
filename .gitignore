@@ -19,3 +19,6 @@ private-keys.json
 __pycache__/
 .pytest_cache/
 .serve/
+
+.vercel
+.env*
